@@ -5,10 +5,12 @@ angular.module('app')
 		function($http, $scope) {
 
 			$scope.roulette = function() {
+				$scope.loading = true;
 				$http.get('api/1/meetup/events')
 					.success(function(data) {
 						var date = new Date(data.time);
 						data.time = date.toLocaleString();
+						$scope.loading = false;
 						$scope.event = data;
 					});
 			};
