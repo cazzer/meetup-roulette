@@ -1,6 +1,38 @@
 <div class="jumbotron">
 	<div class="container">
-		<h1>Express Angular Seed!</h1>
-		<p>Get excited to build off of this very elegant starter application.</p>
+		<h1>Meetup Roulette</h1>
+		<p>Let's make some bad decisions.</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row" ng-if="event">
+		<div class="col-md-4">
+			<h3><a href="http://www.meetup.com/{{event.group.urlname}}">{{event.group.name}}</a></h3>
+			<h4>{{event.group.who}}</h4>
+		</div>
+		<div class="col-md-8">
+			<h3><a href="{{event.event_url}}">{{event.name}}</a></h3>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>When</th>
+						<th>RSVPs</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{event.time}}</td>
+						<td>{{event.yes_rsvp_count}}<span ng-if="event.rsvp_limit">/{{event.rsvp_limit}}</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<div ng-bind-html="event.description"></div>
+		</div>
+	</div>
+	<div class="row">
+		<button
+				type="button"
+				class="btn btn-primary btn-lg btn-block"
+				ng-click="roulette()">Next Meetup</button>
 	</div>
 </div>

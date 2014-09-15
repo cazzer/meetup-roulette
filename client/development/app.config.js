@@ -1,8 +1,11 @@
 angular.module('app')
 	.config([
 		'$urlRouterProvider',
-		function($urlRouterProvider) {
+		'$sceProvider',
+		function($urlRouterProvider, $sceProvider) {
 
 			$urlRouterProvider
 				.otherwise('/');
+
+			$sceProvider.enabled(false);
 		}]);

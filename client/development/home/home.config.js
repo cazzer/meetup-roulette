@@ -6,6 +6,7 @@ angular.module('app')
 			$stateProvider
 				.state('home', {
 					url: '/',
-					templateUrl: 'home/home.tpl.html'
+					templateUrl: 'home/home.tpl.html',
+					controller: 'home'
 				});
 		}]);
