@@ -5,6 +5,7 @@ angular.module('app')
 		function($http, $scope) {
 
 			$scope.roulette = function() {
+				$scope.event = false;
 				$scope.loading = true;
 				$http.get('api/1/meetup/events')
 					.success(function(data) {
