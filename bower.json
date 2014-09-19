@@ -1,7 +1,7 @@
 {
-  "name": "express-angular-seed",
+  "name": "meetup-roulette",
   "main": "index.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/calebthebrewer/express-angular-seed",
   "authors": [
     "Caleb Brewer <calebthebrewer@gmail.com>"

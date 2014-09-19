@@ -13,8 +13,8 @@ module.exports = function(app) {
 			res.send(meetupCache[Math.floor((Math.random() * meetupCache.length))]);
 		} else {
 			meetup.getOpenEvents({
-				lat: '30.261038',
-				lon: '-97.760641',
+				lat: req.query.lat,
+				lon: req.query.lon,
 				time: '0,1d'
 			}, function(err, events) {
 				meetupCache = events.results;

@@ -22,6 +22,7 @@ var gulp = require('gulp'),
 var dev = 'client/development',
 	prod = 'client/production',
 	bower = 'bower_components',
+	favicon = dev + '/favicon.ico',
 	isProd = false;
 
 /*
@@ -74,7 +75,7 @@ gulp.task('dev', ['sass', 'js', 'html', 'vendor', 'templates']);
 
 gulp.task('prod', function() {
 	isProd = true;
-	return runSequence(['dev']);
+	return runSequence(['dev', 'favicon']);
 });
 
 gulp.task('sass', function() {
@@ -134,6 +135,11 @@ gulp.task('vendor', function() {
 		gulp.src(vendorMaps)
 			.pipe(gulp.dest(prod + '/vendor'))
 	);
+});
+
+gulp.task('favicon', function() {
+	gulp.src(favicon)
+		.pipe(gulp.dest(prod));
 });
 
 gulp.task('clean', function() {
